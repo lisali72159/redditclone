@@ -1,0 +1,14 @@
+<h1><%= @post.title %></h1>
+<h2>By: <%= @post.author.username %></h2>
+<a href="https://<%= @post.url %>">Click me!</a>
+
+<p><%= @post.content %></p>
+
+<input type="hidden" name="comment[:post_id]" value="<%= @post.id %>">
+
+
+<ul>
+<% @post.comments.each do |comment| %>
+<li><%= comment.body %></li>
+<% end %>
+</ul>
